@@ -41,7 +41,7 @@ export class ComputersService {
     query
       .skip((page - 1) * limit)
       .take(limit)
-      .orderBy('computer.createdAt', 'DESC');
+      .orderBy('computer.updatedAt', 'DESC');
 
     const [data, total] = await query.getManyAndCount();
 
