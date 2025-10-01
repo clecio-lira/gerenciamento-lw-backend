@@ -13,11 +13,11 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async register(username: string, email: string, password: string) {
-    const hashed = await bcrypt.hash(password, 10);
-    const user = this.userRepo.create({ username, email, password: hashed });
-    return this.userRepo.save(user);
-  }
+  // async register(username: string, email: string, password: string) {
+  //   const hashed = await bcrypt.hash(password, 10);
+  //   const user = this.userRepo.create({ username, email, password: hashed });
+  //   return this.userRepo.save(user);
+  // }
 
   async login(email: string, password: string) {
     const user = await this.userRepo.findOne({ where: { email } });
